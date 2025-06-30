@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Geist:wght@100..900&display=swap');
+
+body {
+  margin: 0;
+  background: #210B0B;
+  font-family: "Exo", sans-serif;
+  color: white;
+}
+.desc {
+  text-align: center;
+}
+.profile-image {
+  display: block;
+  background: round url("https://cdn.glitch.global/99c46747-c845-4fe0-9080-918d181c8974/25-sty-02-10-10-01-11.png?v=1737235934237");
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.2s;
+  transition-timing-function: ease;
+}
+.profile-image:hover {
+  width: 280px;
+  height: 280px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  transition: 0.2s;
+  transition-timing-function: ease;
+}
+.box-top {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  display: block;
+  border-radius: 15px 15px 0 0;
+  background: rgba(89,0,46,0.2);
+  max-width: 500px;
+}
+.box-middle {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  display: block;
+  border-radius: 0;
+  background: rgba(89,0,46,0.2);
+  max-width: 500px;
+}
+.box-bottom {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  display: block;
+  border-radius: 0 0 15px 15px;
+  background: rgba(89,0,46,0.2);
+  max-width: 500px;
+}
+.profile-name {
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  font-weight: 900;
+}
+
+.profile-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*width: 100%;*/
+  /*height: 80px;*/
+  border-radius: 10px;
+  transition: 0.2s;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition-timing-function: ease;
+}
+.profile-link:hover {
+  /*height: 100px;*/
+  transition: 0.2s;
+  transition-timing-function: ease;
+  background: rgba(0,0,0,0.2);
+}
+.profile-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.2s;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+/* Custom Socials */
+/*.link-icon {
+  margin-right: 15px;
+}*/
+.file-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.file-grid > a {
+  width: 240px;
+  height: 200px;
+  margin: 5px;
+  text-align: center;
+  font-size: 15px;
+}
+.file-grid > .file:hover {
+  cursor: pointer;
+  /*background: rgba(0,0,0,0.5);*/
+}
+.link-icon {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+@media only screen and (max-width: 530px) {
+  .file-grid > a {
+  width: 100%;
+  height: 200px;
+  margin: 5px;
+  text-align: center;
+  font-size: 15px;
+}
+}
+
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 120px;
+  background: black;
+  margin: auto;
+}
+
+.right {
+  width: calc(100% - 120px);
+  background: red;
+  text-align: center;
+}
