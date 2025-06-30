@@ -11,7 +11,7 @@ body {
 }
 .profile-image {
   display: block;
-  background: round url("https://cdn.glitch.global/99c46747-c845-4fe0-9080-918d181c8974/25-sty-02-10-10-01-11.png?v=1737235934237");
+  background: round url("/_data/img/profile.png");
   width: 250px;
   height: 250px;
   border-radius: 10px;
