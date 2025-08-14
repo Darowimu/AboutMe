@@ -1,0 +1,22 @@
+<Posts>
+    <Post>
+        <Title>GetDinoFood gets website!</Title>
+        <Date>14-08-2025</Date>
+        <Content>Today, I added this page a new site for storing game versions, posts, and other important stuff!</Content>
+        <img>
+            <image>
+                <src>image1.jpg</src>
+                <alt>Image 1</alt>
+            </image>
+            <image>
+                <src>image2.jpg</src>
+                <alt>Image 2</alt>
+            </image>
+        </img>
+        <tags>
+            <tag>example</tag>
+            <tag>json</tag>
+            <tag>data</tag>
+        </tags>
+    </Post>
+</Posts>
