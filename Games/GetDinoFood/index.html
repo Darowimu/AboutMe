@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content Sorter</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .post-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js" defer></script>
+</head>
+<body class="p-6">
+    <div class="max-w-4xl mx-auto">
+        <!-- Title and description -->
+        <header class="text-center mb-10">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-2">My Blog Posts</h1>
+            <p class="text-gray-600 text-lg">A demonstration of reading JSON or XML data and sorting posts.</p>
+        </header>
+
+        <!-- Controls for sorting and filtering -->
+        <div class="bg-white p-6 rounded-xl shadow-lg mb-8 flex flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0">
+            <div class="flex items-center space-x-4">
+                <span class="text-gray-700 font-semibold">Sort By:</span>
+                <button id="sort-date-asc" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">Date (Oldest)</button>
+                <button id="sort-date-desc" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">Date (Newest)</button>
+            </div>
+            
+            <div id="tag-container" class="flex flex-wrap items-center space-x-2 space-y-2 md:space-y-0">
+                <span class="text-gray-700 font-semibold mr-2">Tags:</span>
+                <button data-tag="all" class="tag-button px-4 py-2 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 transition-colors">All</button>
+                <!-- Tag buttons will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Message box for loading/error messages -->
+        <div id="message-box" class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-lg mb-8 hidden" role="alert">
+            <p id="message-text" class="font-bold"></p>
+        </div>
+        
+        <!-- Post container -->
+        <div id="post-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Posts will be dynamically inserted here -->
+        </div>
+    </div>
+</body>
+</html>
