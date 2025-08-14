@@ -1,0 +1,17 @@
+{
+    "Snapshot": {
+        "version": "1.0.0",
+        "lastUpdated": "2025-08-14",
+        "url": "/Games/GetDinoFood/_data/game/snapshot/001build/index.html"
+    },
+    "Stable": {
+        "version": "1.0.0",
+        "lastUpdated": "2025-08-14",
+        "url": "/Games/GetDinoFood/_data/game/stable/001build/index.html"
+    },
+    "Itch-Stable": {
+        "version": "1.0.0",
+        "lastUpdated": "2025-08-14",
+        "url": null
+    }
+}
