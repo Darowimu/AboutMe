@@ -8,7 +8,7 @@
         // If you want to use the JSON file, set this to 'example.json'.
         // If you want to use the XML file, set this to 'example.xml'.
         // The code will automatically detect and parse the correct format.
-        dataFile: 'posts.xml' 
+        dataFile: '_data/posts.xml' 
     };
 
     // --- DOM Elements ---
