@@ -16,6 +16,10 @@
     const tagContainer = document.getElementById('tag-container');
     const messageBox = document.getElementById('message-box');
     const messageText = document.getElementById('message-text');
+    const modalContainer = document.getElementById('modal-container');
+    const modalCloseButton = document.getElementById('modal-close');
+    const modalTitle = document.getElementById('modal-title');
+    const modalContent = document.getElementById('modal-content');
 
     // --- State Variables ---
     let allPosts = [];
@@ -129,6 +133,7 @@
     function renderPost(post) {
         const postDiv = document.createElement('div');
         postDiv.className = 'post-card bg-white rounded-xl shadow-md overflow-hidden';
+        postDiv.dataset.title = post.title; // Use a data attribute to store the title for easy lookup
         
         let imgHtml = '';
         if (post.img && post.img.src) {
@@ -144,7 +149,7 @@
             <div class="p-6">
                 <h2 class="text-2xl font-bold text-gray-800 mb-2">${post.title}</h2>
                 <p class="text-gray-500 text-sm mb-4">${new Date(post.date).toLocaleDateString()}</p>
-                <p class="text-gray-700 mb-4">${post.content}</p>
+                <p class="text-gray-700 mb-4 h-[100px] overflow-hidden">${post.content}</p>
                 <div class="flex flex-wrap gap-2">
                     ${tagButtonsHtml}
                 </div>
@@ -202,6 +207,19 @@
         renderPosts(displayedPosts);
     }
 
+    // Function to show the modal with post content
+    function showModal(post) {
+        modalTitle.textContent = post.title;
+        modalContent.textContent = post.content;
+        modalContainer.style.display = 'flex';
+    }
+
+    // Function to hide the modal
+    function hideModal() {
+        modalContainer.style.display = 'none';
+    }
+
+
     // --- Event Listeners ---
 
     // Add event listeners for sorting buttons
@@ -233,6 +251,22 @@
             updatePosts();
         }
     });
+
+    // Add a single event listener for post clicks using event delegation
+    postContainer.addEventListener('click', (event) => {
+        const postCard = event.target.closest('.post-card');
+        if (postCard) {
+            const postTitle = postCard.dataset.title;
+            // Find the full post object from allPosts
+            const post = allPosts.find(p => p.title === postTitle);
+            if (post) {
+                showModal(post);
+            }
+        }
+    });
+
+    // Event listener for the modal close button
+    modalCloseButton.addEventListener('click', hideModal);
 
     // Initial fetch of data when the script loads
     fetchData();

@@ -13,10 +13,44 @@
         }
         .post-card {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            cursor: pointer; /* Add pointer cursor to indicate it's clickable */
         }
         .post-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Modal-specific styles */
+        .modal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            max-width: 800px;
+            max-height: 90%;
+            overflow-y: auto;
+            position: relative;
+        }
+        .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4a5568;
+            cursor: pointer;
         }
     </style>
     <!-- Link to the external JavaScript file -->
@@ -53,6 +87,15 @@
         <!-- Post container -->
         <div id="post-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Posts will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Modal for displaying full post content -->
+    <div id="modal-container" class="modal-container">
+        <div class="modal-content">
+            <button id="modal-close" class="close-button">&times;</button>
+            <h2 id="modal-title" class="text-3xl font-bold text-gray-900 mb-4"></h2>
+            <p id="modal-content" class="text-gray-700 leading-relaxed"></p>
         </div>
     </div>
 </body>
